@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+// @import "abstracts/root-vars-map";
+@import "abstracts/variables";
+// @import "abstracts/functions";
+@import "abstracts/mixins";
+
+// 2. Vendors
+@import "~@fancyapps/ui/dist/carousel/carousel";
+@import "~@fancyapps/ui/dist/carousel/carousel.autoplay";
+@import "~@fancyapps/ui/dist/carousel/carousel.thumbs";
+@import "abstracts/fancyapps-vars-overrides";

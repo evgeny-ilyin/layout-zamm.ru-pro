@@ -1,0 +1,378 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+// .clearfix::after {
+// 	clear: both;
+// 	content: "";
+// 	display: table;
+// }
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+// .hide-text {
+// 	overflow: hidden;
+// 	padding: 0; /* 1 */
+// 	text-indent: 101%;
+// 	white-space: nowrap;
+// }
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+// .visually-hidden {
+// 	appearance: none;
+// 	clip-path: rect(0 0 0 0);
+// 	width: 1px;
+// 	height: 1px;
+// 	margin: -1px;
+// 	border: 0;
+// 	padding: 0;
+// 	overflow: hidden;
+// 	position: absolute;
+// }
+
+/**
+ * Visibility
+ */
+.hidden {
+	display: none !important;
+}
+
+// .hidden-lg
+.hidden-lg {
+	@include respond-to(lg) {
+		display: none !important;
+	}
+}
+
+.hidden-overflow {
+	overflow: hidden;
+}
+
+.invisible {
+	opacity: 0;
+	z-index: -1;
+	transition: all $transition-default;
+}
+
+// .hidden-img-lg {
+// 	@include respond-to(lg) {
+// 		img {
+// 			display: none !important;
+// 		}
+// 	}
+// }
+
+// .visible-lg
+// .visible-lg {
+// 	display: none !important;
+// 	@include respond-to(lg) {
+// 		display: block !important;
+// 	}
+// }
+
+/**
+ * Other
+ */
+// .nowrap {
+// 	white-space: nowrap;
+// }
+
+.flex {
+	display: flex !important;
+}
+
+.flex-column {
+	flex-direction: column !important;
+}
+
+.flex-row {
+	flex-direction: row !important;
+}
+
+.flex-center {
+	justify-content: center !important;
+}
+
+.flex-space-between {
+	justify-content: space-between !important;
+}
+
+.flex-header {
+	display: flex;
+	align-items: center;
+
+	* {
+		margin-bottom: 0;
+	}
+}
+
+.pos-flex-right {
+	margin-left: auto !important;
+}
+
+.noscroll {
+	overflow: hidden;
+	width: 100vw;
+	position: fixed;
+}
+
+.center {
+	margin: 0 auto !important;
+}
+
+.relative {
+	position: relative !important;
+}
+
+/**
+ * Scrollbar
+ */
+.scrollblock {
+	overflow: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+
+	/* Firefox */
+	@supports (-moz-appearance: none) {
+		scrollbar-width: thin;
+		scrollbar-color: $gray-dark-second $gray-light;
+	}
+
+	/* Chrome, Edge and Safari */
+	&::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+	}
+
+	&::-webkit-scrollbar-track,
+	&::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+	}
+
+	&::-webkit-scrollbar-track,
+	&::-webkit-scrollbar-track:hover,
+	&::-webkit-scrollbar-track:active {
+		background-color: $gray-light;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $gray-dark-second;
+	}
+
+	&::-webkit-scrollbar-thumb:hover,
+	&::-webkit-scrollbar-thumb:active {
+		background-color: #b8c3ca;
+	}
+}
+
+.hide-scroll {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.hover-scroll {
+	// -webkit-mask-image: linear-gradient(to top, transparent, black), linear-gradient(to left, transparent 17px, black 17px);
+	// -webkit-mask-size: 100% 20000px;
+	// -webkit-mask-position: left bottom;
+	// mask-image: linear-gradient(to top, transparent, black), linear-gradient(to left, transparent 17px, black 17px);
+	// mask-size: 100% 20000px;
+	// mask-position: left bottom;
+
+	// &::-webkit-scrollbar-track,
+	// &::-webkit-scrollbar-track:hover,
+	// &::-webkit-scrollbar-track:active {
+	// 	background-color: transparent;
+	// }
+
+	// @include on-hover {
+	// 	-webkit-mask-position: left top;
+	// }
+
+	&::-webkit-scrollbar-track,
+	&::-webkit-scrollbar-track:hover,
+	&::-webkit-scrollbar-track:active {
+		background-color: transparent;
+	}
+
+	@include when-inside("body:not(.is-touch)") {
+		&::-webkit-scrollbar-thumb {
+			background-color: transparent;
+		}
+
+		@include on-hover {
+			&::-webkit-scrollbar-thumb {
+				background-color: $gray-dark-second;
+			}
+
+			&::-webkit-scrollbar-thumb:hover,
+			&::-webkit-scrollbar-thumb:active {
+				background-color: #b8c3ca;
+			}
+		}
+	}
+}
+
+.scroll-x {
+	overflow-x: scroll;
+}
+
+.scroll-y {
+	overflow-y: scroll;
+}
+
+/**
+ * Animations
+ */
+// .blink {
+// 	animation: fadeEffect 0.8s;
+// }
+
+// @keyframes fadeEffect {
+// 	from {
+// 		opacity: 0;
+// 	}
+// 	to {
+// 		opacity: 1;
+// 	}
+// }
+
+/**
+ * Backgrounds
+ */
+
+.bg-gray {
+	--bg-full: #{$gray};
+	background-color: $gray;
+}
+
+.bg-gray-xxl {
+	--bg-full: #{$gray};
+
+	@include respond-to(xxl) {
+		background-color: $gray;
+	}
+}
+
+.bg-full {
+	box-shadow: 0 0 0 100vmax var(--bg-full);
+	clip-path: inset(0 -100vmax);
+}
+
+// black overlay
+.overlay {
+	&::before {
+		content: "";
+		display: block;
+		position: fixed;
+		z-index: 12;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(51, 51, 51, 0.1);
+		opacity: 0;
+		transition: opacity $transition-default;
+	}
+	&.is-active {
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
+// frame/slide signature @ left corner
+.item-note {
+	position: absolute;
+	right: 17px;
+	bottom: 12px;
+	left: 17px;
+	text-decoration: none;
+	text-shadow: 1px 1px 3px $black60;
+	// text-shadow: none !important;
+}
+
+.block {
+	display: block;
+}
+
+// collapse
+.js-collapse {
+	cursor: pointer;
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: calc(50% - 5px);
+		right: 2px;
+		width: 7px;
+		height: 10px;
+		background: $svg-angle center no-repeat;
+		transform: translateY(1px) rotate(-90deg);
+		transition: transform $transition-default;
+	}
+
+	&.is-collapsed {
+		& + div {
+			height: 0;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		&::after {
+			transform: translateY(1px) rotate(90deg);
+		}
+	}
+
+	& ~ div {
+		transition: all $transition-default;
+	}
+}
+
+.js-target-collapse {
+	span {
+		&::after {
+			content: "";
+			display: block;
+			margin-left: 9px;
+			width: 8px;
+			height: 11px;
+			background: $svg-angle center no-repeat;
+			transform: translateY(1px) rotate(90deg);
+			transition: all $transition-default !important;
+		}
+	}
+
+	&[aria-expanded="true"] {
+		span {
+			&::after {
+				transform: translateY(1px) rotate(-90deg);
+			}
+		}
+	}
+}
+
+.is-collapsible {
+	transition: all $transition-default;
+	overflow: hidden;
+}
+
+.is-collapsed:not(.js-collapse) {
+	height: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}

@@ -1,0 +1,817 @@
+.btn {
+	cursor: pointer;
+	display: block;
+	overflow: hidden;
+	// white-space: nowrap;
+	width: fit-content;
+	border: 0;
+	border-radius: 4px;
+	padding: 12px 24px 10px;
+	font-size: rem(15);
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.3px;
+	color: $text-color !important;
+	text-decoration: none;
+	text-align: center;
+	transition: all $transition-default, text-indent 0s;
+	overflow-wrap: anywhere;
+	word-break: break-word; // deprecated
+	user-select: none;
+
+	span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		// transition: all $transition-default;
+
+		&::after {
+			transition: opacity $transition-default;
+		}
+	}
+
+	svg {
+		width: 17px;
+		height: 17px;
+		fill: currentColor;
+	}
+
+	// @include on-event {
+	// 	text-shadow: none;
+	// }
+	@include on-focus-visible {
+		box-shadow: 0 0 0 1px $black60, 0 0 0 7px $black-real10 !important;
+		border-radius: 4px;
+		outline: none;
+	}
+
+	// .btn_disabled
+	&_disabled {
+		cursor: default !important;
+		pointer-events: none;
+		color: rgba($color: #333, $alpha: 0.3) !important;
+
+		span::after {
+			opacity: 0.5;
+		}
+	}
+
+	@include on-disabled {
+		@extend .btn_disabled;
+	}
+
+	// .btn_gray-dark
+	&_gray-dark {
+		background: $gray-dark;
+
+		@include on-hover {
+			background: $gray;
+			box-shadow: 0 0 0 1px $black10;
+		}
+		@include on-active {
+			box-shadow: 0 0 0 1px $black60;
+			color: $black60 !important;
+			span::after {
+				opacity: 0.5;
+			}
+		}
+		@include on-focus {
+			// box-shadow: 0 0 0 1px $black60 inset, 0 0 0 6px #f7e9c7;
+		}
+		@include on-disabled {
+		}
+	}
+
+	// .btn_gray-light
+	&_gray-light {
+		background: $gray;
+		box-shadow: 0 0 0 1px $gray;
+
+		@include on-hover {
+			background: $white;
+			box-shadow: 0 0 0 1px $black10;
+		}
+		@include on-active {
+			box-shadow: 0 0 0 1px $black60;
+			color: $black60 !important;
+			span::after {
+				opacity: 0.6;
+			}
+		}
+		@include on-focus {
+			// box-shadow: 0 0 0 1px $black60 inset, 0 0 0 6px #f7e9c7;
+		}
+		@include on-disabled {
+		}
+	}
+
+	// .btn_gray
+	&_gray {
+		background: $gray;
+		box-shadow: 0 0 0 1px $black30;
+
+		@include on-hover {
+			box-shadow: 0 0 0 1px $black70;
+		}
+		@include on-active {
+			box-shadow: 0 0 0 1px $black;
+			color: $black60 !important;
+			span::after {
+				opacity: 0.5;
+			}
+		}
+		@include on-focus {
+			// box-shadow: 0 0 0 1px $black60 inset, 0 0 0 6px #f7e9c7;
+		}
+		@include on-disabled {
+		}
+	}
+
+	// .btn_yellow
+	&_yellow {
+		background: $yellow;
+		box-shadow: 0 0 0 1px $yellow;
+
+		@include on-hover {
+			background: $yellow-dark;
+			box-shadow: 0 0 0 1px $yellow-dark;
+		}
+		@include on-active {
+			background: $yellow-dark;
+			box-shadow: 0 0 0 1px $black60;
+			color: $black60 !important;
+			span::after {
+				opacity: 0.6;
+			}
+		}
+		@include on-focus {
+			// box-shadow: 0 0 0 1px $black60 inset, 0 0 0 6px #f7e9c7;
+		}
+		@include on-disabled {
+		}
+	}
+
+	// .btn_yellow-dark
+	&_yellow-dark {
+		background: $yellow-dark;
+		box-shadow: 0 0 0 1px $yellow-dark;
+
+		@include on-hover {
+			background: $yellow;
+			box-shadow: 0 0 0 1px $yellow;
+		}
+		@include on-active {
+			background: $yellow;
+			box-shadow: 0 0 0 1px $black60;
+			color: $black60 !important;
+			span::after {
+				opacity: 0.5;
+			}
+		}
+		@include on-focus {
+			// box-shadow: 0 0 0 1px $black60 inset, 0 0 0 6px #f7e9c7;
+		}
+		@include on-disabled {
+		}
+	}
+
+	// .btn_white
+	&_white {
+		background: $white;
+		box-shadow: 0 0 0 1px $black30;
+
+		@include on-hover {
+			background: $gray;
+			box-shadow: 0 0 0 1px $black30;
+		}
+		@include on-active {
+			box-shadow: 0 0 0 1px $black60;
+			color: $black60 !important;
+			span::after {
+				opacity: 0.6;
+			}
+		}
+		@include on-focus {
+			// box-shadow: 0 0 0 1px $black60 inset, 0 0 0 6px $black10;
+		}
+		@include on-disabled {
+		}
+	}
+
+	// .btn_white-transp
+	&_white-transp {
+		color: $white !important;
+		background: rgba(255, 255, 255, 0.2);
+		box-shadow: none;
+
+		@include on-hover {
+			background: rgba(255, 255, 255, 0.4);
+		}
+	}
+
+	// .btn_transparent
+	&_transparent {
+		// background: $white;
+		box-shadow: 0 0 0 1px $black30;
+
+		@include on-hover {
+			box-shadow: 0 0 0 1px $black70;
+		}
+		@include on-active {
+			box-shadow: 0 0 0 1px $black;
+			color: $black60 !important;
+			span::after {
+				opacity: 0.6;
+			}
+		}
+	}
+
+	// .btn_svg
+	&_svg {
+		padding-left: 13px;
+		padding-right: 13px;
+		max-width: 43px !important;
+	}
+
+	// .btn_small
+	&_small {
+		font-size: rem(13);
+		line-height: 1.1;
+		padding: 5px 15px 4px;
+	}
+
+	// .btn_medium
+	&_medium {
+		padding-left: 61px;
+		padding-right: 61px;
+	}
+
+	// .btn_long
+	&_long {
+		padding-left: 72px;
+		padding-right: 72px;
+	}
+
+	// .btn_fit
+	&_fit {
+		width: fit-content;
+	}
+
+	// .btn_wide, .btn_fill
+	&_wide,
+	&_fill {
+		width: 100%;
+	}
+
+	// .btn_nav-second
+	&_nav-second {
+		width: 100%;
+
+		@include respond-to(lg) {
+			padding: 6px 12px 4px;
+			font-size: rem(13);
+			color: $yellow !important;
+			background: $black;
+			box-shadow: none !important;
+
+			span {
+				transition: none;
+			}
+
+			@include on-hover {
+				color: $black !important;
+				background: $white;
+			}
+			@include on-active {
+				span::after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	// .btn_angle
+	&_angle {
+		span {
+			&::after {
+				content: "";
+				display: block;
+				margin-left: 10px;
+				width: 15px;
+				height: 10px;
+				flex: 0 0 10px;
+				background: $svg-angle right center no-repeat;
+				transition: opacity $transition-default;
+			}
+		}
+
+		&.btn_white {
+			box-shadow: 0 0 0 1px $white;
+
+			@include on-hover {
+				box-shadow: 0 0 0 1px $black10;
+			}
+			@include on-active {
+				box-shadow: 0 0 0 1px $black60;
+			}
+			@include on-focus-visible {
+				box-shadow: 0 0 0 1px $black60 !important;
+			}
+		}
+	}
+
+	// .btn_arrow
+	&_arrow {
+		span {
+			&::after {
+				content: "";
+				display: block;
+				margin-left: 5px;
+				width: 15px;
+				height: 15px;
+				flex: 0 0 15px;
+				background-image: $svg-arrow-black;
+				background-repeat: no-repeat;
+				transition: all $transition-default;
+				margin-bottom: 1px;
+			}
+		}
+
+		@include on-hover {
+			span {
+				&::after {
+					transform: rotate(45deg);
+				}
+			}
+		}
+
+		// @include on-focus {
+		// 	span {
+		// 		&::after {
+		// 			transform: rotate(45deg);
+		// 		}
+		// 	}
+		// }
+
+		@include on-focus-visible {
+			box-shadow: 0 0 0 1px $black60, 0 0 0 7px $gray-blue-light !important;
+			border-radius: 4px;
+			outline: none;
+		}
+
+		&.btn_white {
+			box-shadow: 0 0 0 1px $white;
+
+			@include on-hover {
+				box-shadow: 0 0 0 1px $black10;
+			}
+			@include on-active {
+				box-shadow: 0 0 0 1px $black60;
+			}
+		}
+
+		&.btn_yellow {
+			@include on-focus-visible {
+				box-shadow: 0 0 0 1px $black60, 0 0 0 7px $yellow-light !important;
+			}
+		}
+
+		&.btn_transparent {
+			@include on-focus-visible {
+				box-shadow: 0 0 0 1px $black60, 0 0 0 7px $black10 !important;
+			}
+		}
+
+		&.btn_nav-second {
+			@include respond-to(lg) {
+				span {
+					&::after {
+						width: 13px;
+						height: 13px;
+						flex: 0 0 13px;
+						background-image: $svg-arrow-yellow;
+					}
+				}
+
+				@include on-hover {
+					span {
+						&::after {
+							background-image: $svg-arrow-black;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// .btn_arrow-big
+	&_arrow-big {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 56px;
+		height: 36px;
+		padding: 0 15px;
+
+		&::after {
+			content: "";
+			display: block;
+			margin-left: 5px;
+			width: 17px;
+			height: 17px;
+			flex: 0 0 17px;
+			background-image: $svg-arrow-black;
+			background-repeat: no-repeat;
+			transition: all $transition-default;
+			margin-bottom: 1px;
+		}
+
+		@include on-hover {
+			&::after {
+				transform: rotate(45deg);
+			}
+		}
+
+		// @include on-focus {
+		// 	&::after {
+		// 		transform: rotate(45deg);
+		// 	}
+		// }
+	}
+
+	// .btn_arrow-forward
+	&_arrow-forward {
+		display: flex;
+
+		span {
+			&::after {
+				content: "";
+				display: block;
+				margin-left: 13px;
+				width: 17px;
+				height: 17px;
+				flex: 0 0 17px;
+				background-image: $svg-arrow-long;
+				background-repeat: no-repeat;
+				transition: all $transition-default;
+				margin-bottom: 1px;
+				transform: scaleX(-1);
+			}
+		}
+
+		@include on-hover {
+			span {
+				&::after {
+					transform: translateX(3px) scaleX(-1);
+				}
+			}
+		}
+	}
+
+	// .btn_filter
+	&_filter {
+		span {
+			&::after {
+				content: "";
+				display: block;
+				margin-left: 5px;
+				width: 16px;
+				height: 16px;
+				flex: 0 0 16px;
+				background-image: $svg-filter;
+				background-repeat: no-repeat;
+				transition: all $transition-default;
+				margin-bottom: 2px;
+			}
+		}
+	}
+
+	// .btn_inset
+	&_inset {
+		position: absolute !important;
+		right: 2px;
+	}
+
+	// .btn_remove
+	&_close,
+	&_remove {
+		position: absolute;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		top: 15px;
+		right: 17px;
+		width: 24px;
+		height: 24px;
+		padding: 0;
+		background-color: transparent;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 1px;
+			height: 18px;
+			background-color: $black;
+			box-shadow: 0 0 1px 0 $black;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	// .btn_close-xl
+	&_close-xl {
+		width: 40px;
+		height: 40px;
+
+		&::before,
+		&::after {
+			height: 25px;
+		}
+	}
+
+	// .btn_close-modal
+	&_close-modal {
+		position: absolute;
+		top: var(--modal-padding-y);
+		right: calc(var(--modal-padding-x) - 5px);
+
+		@include respond-to(md, "max") {
+			&::before,
+			&::after {
+				height: 25px;
+			}
+		}
+	}
+
+	// .btn_reset
+	&_reset {
+		background: transparent;
+		font-size: rem(13);
+		color: $black60 !important;
+		padding: 0;
+		display: flex;
+		align-items: center;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 18px;
+			height: 18px;
+			margin-left: 4px;
+			background: $svg-close center no-repeat;
+			opacity: 0.6;
+			transition: all $transition-default;
+		}
+
+		@include on-hover {
+			color: $black !important;
+
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+
+	// .btn_download
+	&_download {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&::after {
+			content: "";
+			display: block;
+			margin-left: 5px;
+			width: 17px;
+			height: 17px;
+			flex: 0 0 17px;
+			background-image: $svg-download;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+.btn-inset {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.btn-trash {
+	display: block;
+	width: 20px;
+	height: 20px;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: $gray-dark-second;
+	}
+
+	@include on-event {
+		svg {
+			fill: $black;
+		}
+	}
+}
+
+.btn-plus {
+	position: relative;
+	width: 32px;
+	height: 32px;
+	border: 0;
+	border-radius: 50%;
+	padding: 0;
+	background: $white;
+	align-items: center;
+	cursor: pointer;
+	text-align: left;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 9px;
+		right: 15px;
+		height: 14px;
+		border-left: 2px solid #858585;
+		transition: all $transition-default;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 15px;
+		right: 9px;
+		width: 14px;
+		border-top: 2px solid #858585;
+	}
+
+	&.is-active {
+		&::before {
+			transform: rotate(90deg);
+		}
+	}
+}
+
+.btn-round {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all $transition-default;
+
+	@include respond-to(lg) {
+		width: 48px;
+		height: 48px;
+	}
+
+	@include on-event {
+		background: $yellow;
+	}
+
+	svg {
+		width: 16px;
+		height: 16px;
+		fill: currentColor;
+		stroke: currentColor;
+	}
+
+	&[data-box-type="video"] {
+		svg {
+			margin-left: 3px;
+			width: 13px;
+			height: 13px;
+
+			@include respond-to(lg) {
+				margin-left: 5px;
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+}
+
+.btn-zones {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	height: 40px;
+
+	img {
+		border-radius: 4px;
+		margin: 0 8px 0 4px;
+	}
+}
+
+.js-close-header-alert {
+	top: auto;
+	right: 11px;
+
+	@include when-inside(".header-alert._black") {
+		&::before,
+		&::after {
+			background-color: $white;
+			box-shadow: 0 0 1px 0 $white;
+		}
+	}
+}
+
+.js-close-search {
+	top: 21px;
+	right: 20px;
+
+	@include when-inside(".is-active") {
+		display: flex;
+	}
+
+	@include respond-to(lg, "max") {
+		@include when-inside(".is-active") {
+			&::after,
+			&::before {
+				width: 25px;
+				height: 2px;
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+.js-popup-close {
+	top: 23px;
+	right: 21px;
+
+	@include respond-to(xm) {
+		top: 32px;
+		right: 25px;
+	}
+
+	&::after,
+	&::before {
+		height: 26px;
+	}
+}
+
+.js-add-to-cart {
+	span {
+		display: inline;
+		position: relative;
+		white-space: nowrap;
+
+		& ~ span {
+			display: none;
+			@include when-inside(".product") {
+				margin-right: 16px;
+			}
+
+			&::after {
+				@include when-inside(".product") {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 4px;
+					right: -20px;
+					width: 14px;
+					height: 12px;
+					background: $svg-checked center no-repeat;
+					background-size: contain;
+				}
+			}
+		}
+	}
+
+	&.in-cart {
+		@include when-inside(".product") {
+			width: calc(50% - 9px);
+		}
+
+		span {
+			display: none;
+
+			& ~ span {
+				display: inline;
+			}
+		}
+	}
+}
+
+button {
+	@include on-focus-visible {
+		box-shadow: 0 0 0 1px $black60, 0 0 0 7px $black-real10;
+		border-radius: 4px;
+	}
+}
