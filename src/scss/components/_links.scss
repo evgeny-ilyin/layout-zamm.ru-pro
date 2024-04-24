@@ -1,231 +1,231 @@
-.link-arrow {
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	width: fit-content;
-	line-height: 1.3;
+// .link-arrow {
+// 	cursor: pointer;
+// 	display: flex;
+// 	align-items: center;
+// 	width: fit-content;
+// 	line-height: 1.3;
 
-	&::after {
-		content: "";
-		display: block;
-		margin-left: 5px;
-		width: 13px;
-		height: 13px;
-		flex: 0 0 13px;
-		background-image: $svg-arrow-black;
-		background-repeat: no-repeat;
-		transition: all $transition-default;
-		margin-bottom: 1px;
-	}
+// 	&::after {
+// 		content: "";
+// 		display: block;
+// 		margin-left: 5px;
+// 		width: 13px;
+// 		height: 13px;
+// 		flex: 0 0 13px;
+// 		background-image: $svg-arrow-black;
+// 		background-repeat: no-repeat;
+// 		transition: all $transition-default;
+// 		margin-bottom: 1px;
+// 	}
 
-	@include on-hover {
-		&::after {
-			transform: rotate(45deg);
-		}
-	}
+// 	@include on-hover {
+// 		&::after {
+// 			transform: rotate(45deg);
+// 		}
+// 	}
 
-	&._blue {
-		color: $bright-blue;
+// 	&._blue {
+// 		color: $yellow;
 
-		&::after {
-			background-image: $svg-arrow-bright-blue;
-		}
-	}
+// 		&::after {
+// 			background-image: $svg-arrow-yellow;
+// 		}
+// 	}
 
-	&._white {
-		color: $white;
+// 	&._white {
+// 		color: $white;
 
-		&::after {
-			background-image: $svg-arrow-white;
-		}
-	}
-}
+// 		&::after {
+// 			background-image: $svg-arrow-white;
+// 		}
+// 	}
+// }
 
-.link-arrow-span {
-	cursor: pointer;
+// .link-arrow-span {
+// 	cursor: pointer;
 
-	&.js-popup-gallery {
-		@include respond-to(lg, "max") {
-			.link-arrow {
-				&::after {
-					display: none;
-				}
-			}
-		}
-	}
+// 	&.js-popup-gallery {
+// 		@include respond-to(lg, "max") {
+// 			.link-arrow {
+// 				&::after {
+// 					display: none;
+// 				}
+// 			}
+// 		}
+// 	}
 
-	@include on-hover {
-		.link-arrow {
-			&::after {
-				transform: rotate(45deg);
-			}
-		}
-	}
-}
+// 	@include on-hover {
+// 		.link-arrow {
+// 			&::after {
+// 				transform: rotate(45deg);
+// 			}
+// 		}
+// 	}
+// }
 
-.link-angle {
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	width: fit-content;
-	text-decoration: none;
-	padding-right: 12px;
+// .link-angle {
+// 	cursor: pointer;
+// 	display: flex;
+// 	align-items: center;
+// 	width: fit-content;
+// 	text-decoration: none;
+// 	padding-right: 12px;
 
-	&::after {
-		content: "";
-		display: block;
-		position: absolute;
-		padding-left: 15px;
-		right: 0;
-		margin-top: 2px;
-		width: 20px;
-		height: 10px;
-		background: $svg-angle right center no-repeat;
-		transition: opacity $transition-default;
-	}
+// 	&::after {
+// 		content: "";
+// 		display: block;
+// 		position: absolute;
+// 		padding-left: 15px;
+// 		right: 0;
+// 		margin-top: 2px;
+// 		width: 20px;
+// 		height: 10px;
+// 		background: $svg-angle right center no-repeat;
+// 		transition: opacity $transition-default;
+// 	}
 
-	@include on-active {
-		&::after {
-			opacity: 0.5;
-		}
-	}
+// 	@include on-active {
+// 		&::after {
+// 			opacity: 0.5;
+// 		}
+// 	}
 
-	&._back {
-		padding-right: 0;
-		padding-left: 12px;
+// 	&._back {
+// 		padding-right: 0;
+// 		padding-left: 12px;
 
-		&::after {
-			right: auto;
-			left: 0;
-			padding-left: 0;
-			transform: rotateY(180deg);
-		}
-	}
+// 		&::after {
+// 			right: auto;
+// 			left: 0;
+// 			padding-left: 0;
+// 			transform: rotateY(180deg);
+// 		}
+// 	}
 
-	&._bg-white {
-		background: $white;
-		border-radius: 28px;
-		padding: 5px 24px 5px 12px;
+// 	&._bg-white {
+// 		background: $white;
+// 		border-radius: 28px;
+// 		padding: 5px 24px 5px 12px;
 
-		&::after {
-			right: 12px;
-		}
-	}
+// 		&::after {
+// 			right: 12px;
+// 		}
+// 	}
 
-	&._gray {
-		&::after {
-			opacity: 0.5;
-		}
+// 	&._gray {
+// 		&::after {
+// 			opacity: 0.5;
+// 		}
 
-		@include when-inside(".product__options") {
-			padding-right: 15px;
+// 		@include when-inside(".product__options") {
+// 			padding-right: 15px;
 
-			&::after {
-				margin-top: 0;
-			}
-		}
-	}
+// 			&::after {
+// 				margin-top: 0;
+// 			}
+// 		}
+// 	}
 
-	&._blue {
-		color: $bright-blue;
+// 	&._blue {
+// 		color: $yellow;
 
-		&::after {
-			opacity: 0.5;
-			background-image: $svg-angle-bright-blue;
-		}
+// 		&::after {
+// 			opacity: 0.5;
+// 			background-image: $svg-angle-yellow;
+// 		}
 
-		@include on-active {
-			color: $bright-blue60;
-		}
-	}
+// 		@include on-active {
+// 			color: $yellow;
+// 		}
+// 	}
 
-	&._lg {
-		padding-right: 16px;
+// 	&._lg {
+// 		padding-right: 16px;
 
-		&::after {
-			margin-top: 4px;
-			height: 15px;
-		}
-	}
-}
+// 		&::after {
+// 			margin-top: 4px;
+// 			height: 15px;
+// 		}
+// 	}
+// }
 
-.link-back {
-	display: flex;
-	align-items: center;
-	width: fit-content;
-	padding-left: 25px;
-	text-decoration: none;
+// .link-back {
+// 	display: flex;
+// 	align-items: center;
+// 	width: fit-content;
+// 	padding-left: 25px;
+// 	text-decoration: none;
 
-	&::before {
-		content: "";
-		display: block;
-		position: absolute;
-		padding-right: 25px;
-		left: 0;
-		margin-top: 1px;
-		width: 16px;
-		height: 16px;
-		background: $svg-arrow-long left center no-repeat;
-	}
-}
+// 	&::before {
+// 		content: "";
+// 		display: block;
+// 		position: absolute;
+// 		padding-right: 25px;
+// 		left: 0;
+// 		margin-top: 1px;
+// 		width: 16px;
+// 		height: 16px;
+// 		background: $svg-arrow-long left center no-repeat;
+// 	}
+// }
 
-.link-cancel {
-	display: flex;
-	align-items: center;
-	position: relative;
-	font-size: rem(13);
-	color: $black60;
+// .link-cancel {
+// 	display: flex;
+// 	align-items: center;
+// 	position: relative;
+// 	font-size: rem(13);
+// 	color: $black60;
 
-	@include on-hover {
-		&::after {
-			opacity: 1;
-		}
-	}
+// 	@include on-hover {
+// 		&::after {
+// 			opacity: 1;
+// 		}
+// 	}
 
-	&::after {
-		content: "";
-		cursor: pointer;
-		display: block;
-		width: 18px;
-		height: 18px;
-		margin-left: 4px;
-		background: $svg-close center no-repeat;
-		opacity: 0.6;
-		transition: opacity 0.15s ease;
-	}
-}
+// 	&::after {
+// 		content: "";
+// 		cursor: pointer;
+// 		display: block;
+// 		width: 18px;
+// 		height: 18px;
+// 		margin-left: 4px;
+// 		background: $svg-close center no-repeat;
+// 		opacity: 0.6;
+// 		transition: opacity 0.15s ease;
+// 	}
+// }
 
-.link-gray {
-	font-size: rem(14);
-	color: $black60;
-	text-decoration-color: $black30;
+// .link-gray {
+// 	font-size: rem(14);
+// 	color: $black60;
+// 	text-decoration-color: $black60;
 
-	@include on-hover {
-		text-shadow: none;
-		text-decoration-color: transparent;
-	}
+// 	@include on-hover {
+// 		text-shadow: none;
+// 		text-decoration-color: transparent;
+// 	}
 
-	@include on-active {
-		color: $black30;
-	}
-}
+// 	@include on-active {
+// 		color: $black60;
+// 	}
+// }
 
-.link-classic {
-	@extend %link-classic;
-}
+// .link-classic {
+// 	@extend %link-classic;
+// }
 
-.link-svg {
-	display: flex;
-	width: fit-content;
-	text-decoration: none;
+// .link-svg {
+// 	display: flex;
+// 	width: fit-content;
+// 	text-decoration: none;
 
-	&._gray {
-		color: $black60;
-	}
+// 	&._gray {
+// 		color: $black60;
+// 	}
 
-	svg {
-		width: 16px;
-		height: 16px;
-		margin-right: 5px;
-	}
-}
+// 	svg {
+// 		width: 16px;
+// 		height: 16px;
+// 		margin-right: 5px;
+// 	}
+// }

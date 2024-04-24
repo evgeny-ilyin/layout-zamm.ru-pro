@@ -3,241 +3,51 @@
 // -----------------------------------------------------------------------------
 
 .footer {
-	background: $gray;
-	margin-top: 50px;
+	background: $black-bgr;
+	color: $gray-light;
 
-	// .footer__logo
-	&__logo {
-		margin-top: -25px;
-
-		@include respond-to(xl) {
-			margin-top: -35px;
-		}
-
-		svg {
-			fill: $black;
-			width: 175px;
-			height: 36px;
-
-			@include respond-to(xl) {
-				width: 259px;
-				height: 53px;
-			}
-		}
-	}
-
-	// .footer__logo-link
-	&__logo-link {
-		display: block;
-		border: 0;
-		width: 175px;
-		height: 36px;
-
-		@include respond-to(xl) {
-			width: 259px;
-			height: 53px;
-		}
-	}
-
-	// .footer__menu
-	&__menu {
-		margin-top: 68px;
-		display: grid;
-		grid-template-columns: repeat(1, 1fr);
-
-		@include respond-to(md) {
-			grid-template-columns: repeat(3, 1fr);
-			gap: 26px 0;
-		}
-
-		@include respond-to(lg) {
-			grid-template-columns: repeat(5, 1fr);
-		}
-	}
-
-	// .footer__bottom
-	&__bottom {
-		display: flex;
-		flex-direction: column;
-		margin: 25px 0 19px;
-
-		@include respond-to(md) {
-			margin: 52px 0 33px;
-		}
-		@include respond-to(lg) {
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-		}
-	}
-
-	// .footer__policy
-	&__policy {
-		order: 2;
-
-		@include respond-to(lg) {
-			grid-area: 1 / 1 / 2 / 4;
-		}
-	}
-
-	// .footer__subscription
-	&__subscription {
-		order: 1;
-
-		@include respond-to(lg) {
-			grid-area: 1 / 4 / 2 / 6;
-			padding: 0 55px;
-		}
-	}
-}
-
-.f-menu {
-	@include respond-to(md, "max") {
-		border-bottom: 1px solid $black10;
-	}
-
-	// .f-menu__header
-	&__header {
-		font-size: rem(15);
-		font-weight: 600;
-
-		@include respond-to(md) {
-			font-size: rem(16);
-			margin-bottom: 14px;
-		}
-	}
-	// .f-menu__list
-	&__list {
-		font-size: rem(14);
-
-		li {
-			padding: 0;
-			margin-bottom: 12px;
-
-			@include respond-to(lg) {
-				margin-bottom: 16px;
-			}
-
-			&:first-child {
-				margin-top: 2px;
-			}
-
-			@include respond-to(lg, "max") {
-				&:last-child {
-					margin-bottom: 27px;
-				}
-			}
-		}
-
-		a {
-			@include on-hover {
-				text-decoration-color: inherit;
-			}
-		}
-	}
-}
-
-.policy {
-	// .policy__info
+	// .footer__info
 	&__info {
+		padding-top: 8px;
+		padding-bottom: 48px;
 		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		font-size: rem(13);
 
-		span,
-		a {
-			margin-bottom: 13px;
+		.footer-col > *:last-child {
+			margin-bottom: 0;
 		}
 
-		@include respond-to(md) {
-			span,
-			a {
-				color: $black60;
-				margin-bottom: 19px;
+		a:not(.btn) {
+			color: $yellow;
+			@extend %link-classic;
+		}
+	}
+
+	// .footer__contacts
+	&__contacts {
+		height: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		padding-bottom: 5px;
+
+		a {
+			color: $black;
+			margin: 0 7px;
+
+			svg.icon-tg {
+				margin-left: -5px;
+			}
+			svg.icon-wsapp {
+				margin-left: 2px;
 			}
 		}
 
-		@include respond-to(lg) {
-			display: grid;
-			grid-auto-flow: column;
-			gap: 15px;
-			justify-content: start;
-
-			span,
-			a {
-				margin-bottom: 0;
-			}
-		}
-	}
-
-	// .policy__year
-	&__year {
-		@include respond-to(md, "max") {
-			order: 3;
-			font-size: rem(12);
-			margin-top: 17px;
-		}
-	}
-
-	// .policy__links
-	&__links {
-		font-size: rem(13);
-
-		@include respond-to(md, "max") {
-			display: grid;
-			justify-content: start;
-			gap: 10px 0;
-			margin: 42px 0 34px;
-		}
-
-		@include respond-to(md) {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			margin: 0;
-		}
-
-		@include respond-to(lg) {
-			display: grid;
-			justify-content: start;
-			grid-auto-flow: column;
-			gap: 15px;
-		}
-	}
-
-	// .policy__text
-	&__text {
-		font-size: rem(12);
-		line-height: 1.5;
-		color: $black60;
-
-		a {
-			color: $black60;
-		}
-
-		@include respond-to(md) {
-			margin-top: 20px;
-		}
-
-		@include respond-to(lg) {
-			margin-top: 16px;
+		button {
+			margin-left: 15px;
 		}
 	}
 }
 
-.subscription {
-	// .subscription__header
-	&__header {
-		font-size: rem(16);
-		text-align: center;
-
-		@include respond-to(lg) {
-			text-align: left;
-		}
-	}
-
-	// .subscription__form
-	&__form {
-		margin-top: 23px;
-	}
+.footer-col {
+	width: 50%;
 }
