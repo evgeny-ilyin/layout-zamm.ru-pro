@@ -2,33 +2,31 @@
 /// Basic styles for headings
 ///
 %h1-heading {
-	font-size: rem(32);
-	line-height: 0.9;
-	font-weight: 600;
-	letter-spacing: -1.28px;
-	margin-bottom: 30px;
+	font-size: rem(70);
+	line-height: 70px;
+	font-weight: 700;
+	letter-spacing: -4px;
 
-	@include respond-to(md) {
-		font-size: rem(40);
-		margin-bottom: 39px;
-	}
+	// @include respond-to(md) {
+	// 	font-size: rem(40);
+	// 	margin-bottom: 39px;
+	// }
 
-	@include respond-to(lg) {
-		font-size: rem(64);
-		font-weight: 700;
-	}
+	// @include respond-to(lg) {
+	// 	font-size: rem(70);
+	// 	font-weight: 700;
+	// }
 }
 
 %h2-heading {
-	font-size: rem(24);
+	font-size: rem(64);
 	line-height: 1;
 	font-weight: 700;
-	letter-spacing: -0.68px;
-	margin-bottom: 24px;
+	letter-spacing: -1px;
 
-	@include respond-to(lg) {
-		font-size: rem(34);
-	}
+	// @include respond-to(lg) {
+	// 	font-size: rem(64);
+	// }
 }
 
 %h3-heading {
@@ -45,15 +43,13 @@
 }
 
 %h4-heading {
-	font-size: rem(18);
+	font-size: rem(32);
 	line-height: 1;
-	font-weight: 700;
-	letter-spacing: -0.4px;
-	margin-bottom: 16px;
+	font-weight: 500;
 
-	@include respond-to(lg) {
-		font-size: rem(20);
-	}
+	// @include respond-to(lg) {
+	// 	font-size: rem(20);
+	// }
 }
 
 %h5-heading {
@@ -99,7 +95,7 @@
 
 %text-links-solid {
 	position: relative;
-	color: $href-color;
+	color: inherit;
 	text-decoration: underline;
 	text-decoration-color: transparent;
 	text-underline-offset: 5px;
@@ -110,15 +106,13 @@
 	transition: all 0.15s ease;
 
 	@include on-hover {
-		text-shadow: $shadow-600;
 		text-decoration-color: inherit;
 		// border-bottom-color: $href-color;
 	}
 
 	@include on-active {
-		color: $black60;
-		text-shadow: $shadow-600;
-		transition: all $transition-default;
+		// color: $black60;
+		// transition: all $transition-default;
 	}
 
 	&:focus-visible {
@@ -135,12 +129,11 @@
 
 %link-classic {
 	text-decoration: underline;
-	text-decoration-color: $black30;
+	text-decoration-color: transparent;
 	text-underline-offset: 1px;
 	transition: all 0.15s ease;
 
 	@include on-hover {
-		text-shadow: 0 0 0;
-		text-decoration-color: $black60;
+		text-decoration-color: inherit;
 	}
 }

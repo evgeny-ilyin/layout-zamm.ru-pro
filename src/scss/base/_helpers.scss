@@ -145,7 +145,7 @@
 	/* Firefox */
 	@supports (-moz-appearance: none) {
 		scrollbar-width: thin;
-		scrollbar-color: $gray-dark-second $gray-light;
+		scrollbar-color: $gray $gray;
 	}
 
 	/* Chrome, Edge and Safari */
@@ -162,11 +162,11 @@
 	&::-webkit-scrollbar-track,
 	&::-webkit-scrollbar-track:hover,
 	&::-webkit-scrollbar-track:active {
-		background-color: $gray-light;
+		background-color: $gray;
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: $gray-dark-second;
+		background-color: $gray;
 	}
 
 	&::-webkit-scrollbar-thumb:hover,
@@ -214,7 +214,7 @@
 
 		@include on-hover {
 			&::-webkit-scrollbar-thumb {
-				background-color: $gray-dark-second;
+				background-color: $gray;
 			}
 
 			&::-webkit-scrollbar-thumb:hover,
@@ -252,6 +252,10 @@
 /**
  * Backgrounds
  */
+
+.bg-white {
+	background: $white;
+}
 
 .bg-gray {
 	--bg-full: #{$gray};

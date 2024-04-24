@@ -19,6 +19,7 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	letter-spacing: -0.28px;
+	background: $black-bgr;
 	// scrollbar-gutter: stable;
 	// sticky для сайдбара не работает, если для html стоит overflow-x: hidden; (выше), нужен clip (ниже), но тогда возникают проблемы у body.noscroll
 
