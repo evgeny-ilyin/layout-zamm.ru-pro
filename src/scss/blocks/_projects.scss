@@ -18,21 +18,20 @@
 			text-align: right;
 		}
 	}
+}
 
-	// .projects__tabs
-	&__tabs {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+.tabs {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-	// .projects__tabs-content
-	&__tabs-content {
+	// .tabs__content
+	&__content {
 		flex: 1;
 	}
 
-	// .projects__tabs-nav
-	&__tabs-nav {
+	// .tabs__nav
+	&__nav {
 		width: 240px;
 		flex: 0 0 240px;
 		padding-left: 62px;
@@ -41,6 +40,7 @@
 		flex-direction: column;
 	}
 }
+
 .tab-block {
 	display: none;
 

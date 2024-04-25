@@ -6,6 +6,8 @@ const srcFolder = "./src";
 const buildFolder = "./build";
 const jsFiles = [
 	"./src/js/carousel-init.js",
+	"./src/js/common.js",
+	"./src/js/tabs.js",
 ];
 
 export const path = {
