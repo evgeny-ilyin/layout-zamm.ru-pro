@@ -5,17 +5,21 @@
 	@@include('html/header.html', {})
 
 	<div class="container">
+		@@include('html/blocks/about.html')
+		@@include('html/blocks/service.html')
+		@@include('html/blocks/partners.html')
+		@@include('html/blocks/manufacturing.html')
+		@@include('html/blocks/call-to-action.html', {"bg": "bg-white"})
+		@@include('html/blocks/projects.html')
+		@@include('html/blocks/docs.html')
 	</div>
 
 	@@include('html/footer.html')
-
+	@@include('html/scroll-to-top.html')
 	@@include('html/svg-sprite.html', {})
 
-
-	<script src="js/vendors/fancyapps/carousel.umd.js"></script>
-	<script src="js/vendors/fancyapps/carousel.autoplay.umd.js"></script>
 	<script src="js/carousel-init.js"></script>
-
+	<script src="js/tabs.js"></script>
 	<!-- <script src="js/common.js"></script> -->
 
 </body>
