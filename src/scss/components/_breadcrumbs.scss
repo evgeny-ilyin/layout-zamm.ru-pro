@@ -1,5 +1,5 @@
 .breadcrumbs {
-	margin: 32px 0 26px;
+	margin: 27px 0 26px;
 
 	// .breadcrumbs__list
 	&__list {
@@ -13,64 +13,33 @@
 
 	// .breadcrumbs__item
 	&__item {
-		font-size: rem(13);
-		padding: 0 6px 0 0;
+		font-size: rem(20);
+		font-weight: 300;
 		margin: 0;
 		display: flex;
 		align-items: center;
 
-		&::after {
-			content: "";
+		svg {
 			display: block;
-			width: 8px;
-			height: 8px;
-			margin-left: 5px;
-			background: $svg-angle center no-repeat;
-			opacity: 0.5;
+			width: 20px;
+			height: 20px;
+			margin: 0 25px;
+			fill: $gray;
 		}
 
-		&:last-child {
-			&::after {
-				display: none;
-			}
-		}
 
 		& > span {
-			color: $black60;
+			color: $gray;
 		}
 	}
 
 	// .breadcrumbs__link
 	&__link {
 		text-decoration: none;
-		color: $black60;
+		color: $gray;
 
 		@include on-hover {
-			color: $black;
-		}
-	}
-
-	@include when-inside(".text-white") {
-		// .breadcrumbs__item
-		&__item {
-			&::after {
-				background: $svg-angle-white center no-repeat;
-			}
-
-			& > span {
-				opacity: 0.5;
-				color: $white;
-			}
-		}
-
-		// .breadcrumbs__link
-		&__link {
-			opacity: 0.5;
-			color: $white;
-
-			@include on-hover {
-				color: $white;
-			}
+			color: $gray-light;
 		}
 	}
 }
