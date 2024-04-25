@@ -37,8 +37,8 @@ function watcher() {
 	gulp.watch(path.watch.svg, svgsprite);
 }
 
-// Основные задачи
-const mainTasks = gulp.parallel(vendors, html, scss, js, img, fonts);
+// Основные задачи //vendors
+const mainTasks = gulp.parallel(html, scss, js, img, fonts);
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, svgsprite, mainTasks, index, gulp.parallel(watcher, server));
