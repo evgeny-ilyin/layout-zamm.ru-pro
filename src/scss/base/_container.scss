@@ -27,6 +27,8 @@
 	padding-left: $min-padding; // 12
 	padding-right: $min-padding;
 	position: relative;
+	scroll-margin-top: 88px;
+	scroll-snap-margin-top: 88px;
 
 	@include respond-to(md) {
 		padding-left: $max-padding; // 16
@@ -36,5 +38,10 @@
 	@include respond-to(xl) {
 		padding-left: $xl-padding; // 100
 		padding-right: $xl-padding;
+	}
+
+	&._no-padding {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

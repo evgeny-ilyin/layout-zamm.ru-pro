@@ -51,5 +51,13 @@
 	// .docs__item-link
 	&__item-link {
 		margin-left: 20px;
+
+		.btn {
+			color: $white;
+
+			@include on-active {
+				color: $white !important;
+			}
+		}
 	}
 }
