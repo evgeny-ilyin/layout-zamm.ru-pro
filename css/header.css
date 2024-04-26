@@ -273,7 +273,8 @@ svg {
   padding: 0;
   -webkit-box-flex: 1;
   -ms-flex: 1;
-  flex: 1
+  flex: 1;
+  overflow: hidden
 }
 .content {
   max-width: 1440px;

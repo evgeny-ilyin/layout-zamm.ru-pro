@@ -412,8 +412,12 @@ function hamburgerMenu() {
 	});
 
 	document.addEventListener("click", (e) => {
+		console.log(e.target);
 		// if (!navMenu.contains(e.target) && menuToggler.checked) {
 		if (menuToggler.checked) {
+			if (e.target.classList.contains("hamburger-inner")) {
+				e.preventDefault();
+			}
 			menuToggler.click();
 		}
 	});
