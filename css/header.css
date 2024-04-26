@@ -290,10 +290,10 @@ svg {
 .h1,
 .h1 > *,
 h1 {
-  font-size: 4.375rem;
-  line-height: 70px;
+  font-size: 8vw;
+  line-height: 1;
   font-weight: 700;
-  letter-spacing: -4px
+  letter-spacing: -1px
 }
 .h2,
 .h2 > *,
@@ -461,25 +461,6 @@ ol {
 }
 .block-header._left {
   text-align: left
-}
-.h-angle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
-}
-.h-angle::after {
-  content: "";
-  display: block;
-  padding-left: 15px;
-  width: 20px;
-  height: 15px;
-  background: var(--svg-angle) right center no-repeat;
-  -webkit-transition: opacity .25s ease-in-out;
-  -o-transition: opacity .25s ease-in-out;
-  transition: opacity .25s ease-in-out
 }
 .hidden {
   display: none!important
@@ -650,62 +631,6 @@ body:not(.is-touch) .hover-scroll:hover::-webkit-scrollbar-thumb:hover {
 }
 .block {
   display: block
-}
-.js-collapse {
-  cursor: pointer;
-  position: relative
-}
-.js-collapse::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: calc(50% - 5px);
-  right: 2px;
-  width: 7px;
-  height: 10px;
-  background: var(--svg-angle) center no-repeat;
-  -webkit-transform: translateY(1px) rotate(-90deg);
-  -ms-transform: translateY(1px) rotate(-90deg);
-  transform: translateY(1px) rotate(-90deg);
-  -webkit-transition: -webkit-transform .25s ease-in-out;
-  transition: -webkit-transform .25s ease-in-out;
-  -o-transition: transform .25s ease-in-out;
-  transition: transform .25s ease-in-out;
-  transition: transform .25s ease-in-out,-webkit-transform .25s ease-in-out
-}
-.js-collapse.is-collapsed + div {
-  height: 0;
-  margin-top: 0;
-  margin-bottom: 0
-}
-.js-collapse.is-collapsed::after {
-  -webkit-transform: translateY(1px) rotate(90deg);
-  -ms-transform: translateY(1px) rotate(90deg);
-  transform: translateY(1px) rotate(90deg)
-}
-.js-collapse ~ div {
-  -webkit-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out
-}
-.js-target-collapse span::after {
-  content: "";
-  display: block;
-  margin-left: 9px;
-  width: 8px;
-  height: 11px;
-  background: var(--svg-angle) center no-repeat;
-  -webkit-transform: translateY(1px) rotate(90deg);
-  -ms-transform: translateY(1px) rotate(90deg);
-  transform: translateY(1px) rotate(90deg);
-  -webkit-transition: all .25s ease-in-out!important;
-  -o-transition: all .25s ease-in-out!important;
-  transition: all .25s ease-in-out!important
-}
-.js-target-collapse[aria-expanded=true] span::after {
-  -webkit-transform: translateY(1px) rotate(-90deg);
-  -ms-transform: translateY(1px) rotate(-90deg);
-  transform: translateY(1px) rotate(-90deg)
 }
 .is-collapsible {
   -webkit-transition: all .25s ease-in-out;
@@ -1081,88 +1006,6 @@ body:not(.is-touch) .hover-scroll:hover::-webkit-scrollbar-thumb:hover {
 .btn_wide {
   width: 100%
 }
-.btn_arrow span::after {
-  content: "";
-  display: block;
-  margin-left: 5px;
-  width: 15px;
-  height: 15px;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 15px;
-  flex: 0 0 15px;
-  background-image: var(--svg-arrow-black);
-  background-repeat: no-repeat;
-  -webkit-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  margin-bottom: 1px
-}
-.btn_arrow:hover span::after {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg)
-}
-.btn_arrow:focus-visible {
-  -webkit-box-shadow: 0 0 0 1px var(--black60),0 0 0 7px var(--gray)!important;
-  box-shadow: 0 0 0 1px var(--black60),0 0 0 7px var(--gray)!important;
-  border-radius: 4px;
-  outline: 0
-}
-.btn_arrow.btn_white {
-  -webkit-box-shadow: 0 0 0 1px var(--white);
-  box-shadow: 0 0 0 1px var(--white)
-}
-.btn_arrow.btn_white:hover {
-  -webkit-box-shadow: 0 0 0 1px var(--black);
-  box-shadow: 0 0 0 1px var(--black)
-}
-.btn_arrow.btn_white:active {
-  -webkit-box-shadow: 0 0 0 1px var(--black60);
-  box-shadow: 0 0 0 1px var(--black60)
-}
-.btn_arrow.btn_yellow:focus-visible {
-  -webkit-box-shadow: 0 0 0 1px var(--black60),0 0 0 7px var(--yellow)!important;
-  box-shadow: 0 0 0 1px var(--black60),0 0 0 7px var(--yellow)!important
-}
-.btn_arrow.btn_transparent:focus-visible {
-  -webkit-box-shadow: 0 0 0 1px var(--black60),0 0 0 7px var(--black)!important;
-  box-shadow: 0 0 0 1px var(--black60),0 0 0 7px var(--black)!important
-}
-.btn_arrow-big {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-width: 56px;
-  height: 36px;
-  padding: 0 15px
-}
-.btn_arrow-big::after {
-  content: "";
-  display: block;
-  margin-left: 5px;
-  width: 17px;
-  height: 17px;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 17px;
-  flex: 0 0 17px;
-  background-image: var(--svg-arrow-black);
-  background-repeat: no-repeat;
-  -webkit-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  margin-bottom: 1px
-}
-.btn_arrow-big:hover::after {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg)
-}
 .btn_arrow-forward {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1248,29 +1091,6 @@ body:not(.is-touch) .hover-scroll:hover::-webkit-scrollbar-thumb:hover {
   position: absolute;
   top: var(--modal-padding-y);
   right: calc(var(--modal-padding-x) - 5px)
-}
-.btn_download {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center
-}
-.btn_download::after {
-  content: "";
-  display: block;
-  margin-left: 5px;
-  width: 17px;
-  height: 17px;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 17px;
-  flex: 0 0 17px;
-  background-image: var(--svg-download);
-  background-repeat: no-repeat
 }
 .btn-round {
   -ms-flex-negative: 0;
@@ -1955,6 +1775,13 @@ input[type=file]:focus-visible ~ span {
     padding-left: 16px;
     padding-right: 16px
   }
+  .h1,
+  .h1 > *,
+  h1 {
+    font-size: 3.75rem;
+    line-height: 60px;
+    letter-spacing: -4px
+  }
   .h2,
   .h2 > *,
   h2 {
@@ -1973,7 +1800,9 @@ input[type=file]:focus-visible ~ span {
     justify-content: space-between
   }
   .logo {
-    margin: 0 auto
+    margin: 0 auto;
+    position: relative;
+    left: -20px
   }
   .btn_big {
     font-size: 1.25rem;
@@ -2011,6 +1840,12 @@ input[type=file]:focus-visible ~ span {
   }
 }
 @media (min-width:1024px) {
+  .h1,
+  .h1 > *,
+  h1 {
+    font-size: 4.375rem;
+    line-height: 70px
+  }
   .h2,
   .h2 > *,
   h2 {
@@ -2029,14 +1864,12 @@ input[type=file]:focus-visible ~ span {
   .block-header {
     font-size: 2.125rem
   }
-  .h-angle::after {
-    margin-top: 4px
-  }
   .hidden-lg {
     display: none!important
   }
   .logo {
-    margin: 0
+    margin: 0;
+    left: auto
   }
   .nav__list {
     padding: 0!important;
@@ -2078,17 +1911,6 @@ input[type=file]:focus-visible ~ span {
   }
   .hamburger-box {
     display: none
-  }
-  .btn_arrow.btn_nav-second span::after {
-    width: 13px;
-    height: 13px;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 13px;
-    flex: 0 0 13px;
-    background-image: var(--svg-arrow-yellow)
-  }
-  .btn_arrow.btn_nav-second:hover span::after {
-    background-image: var(--svg-arrow-black)
   }
   .form-item__body {
     width: 75%
