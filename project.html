@@ -7,15 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 	<!-- common header -->
-	<link rel="stylesheet" href="css/root-vars.css?v=20240425165544">
-	<link rel="stylesheet" href="css/fonts.css?v=20240425165544">
-	<link rel="stylesheet" href="css/header.css?v=20240425165544">
-	<link rel="stylesheet" href="css/carousel-vendor.css?v=20240425165544">
+	<link rel="stylesheet" href="css/root-vars.css?v=20240426151818">
+	<link rel="stylesheet" href="css/fonts.css?v=20240426151818">
+	<link rel="stylesheet" href="css/header.css?v=20240426151818">
+	<link rel="stylesheet" href="css/carousel-vendor.css?v=20240426151818">
 
-	<link rel="stylesheet" href="css/tenders.css?v=20240425165544">
+	<link rel="stylesheet" href="css/tenders.css?v=20240426151818">
 
 	<!-- common footer -->
-	<link rel="stylesheet" href="css/footer.css?v=20240425165544">
+	<link rel="stylesheet" href="css/footer.css?v=20240426151818">
 
 	<title>Описание проекта</title>
 	<meta name="description" content="Описание проекта">
@@ -54,7 +54,8 @@
 								<li class="nav__item"><a href="#docs">Документация</a></li>
 								<li class="nav__item"><a href="#request">Оставить заявку</a></li>
 								<li class="nav__item">
-									<button type="button" data-url="" class="btn btn_yellow-transparent btn_small js-modal-show">Заказать звонок</button>
+									<button type="button" class="btn btn_yellow-transparent btn_small js-modal-show" data-box-width="510" data-url="https://deviart.ru/zamm-pro/fetch-modal.php?modal=callback">Заказать звонок</button>
+								</li>
 							</ul>
 						</nav>
 					</div>
@@ -102,10 +103,12 @@
 				<div class="swiper carousel-project">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<picture>
-								<source srcset="img/dev/project-carousel/carousel-project.webp" type="image/webp" />
-								<img src="img/dev/project-carousel/carousel-project.jpg" alt="" loading="lazy" />
-							</picture>
+							<a href="img/dev/about-bg-1.jpg" class="js-modal-show" data-box-width="1000" data-box-type="image">
+								<picture>
+									<source srcset="img/dev/project-carousel/carousel-project.webp" type="image/webp" />
+									<img src="img/dev/project-carousel/carousel-project.jpg" alt="" loading="lazy" />
+								</picture>
+							</a>
 						</div>
 						<div class="swiper-slide">
 							<picture>
@@ -275,6 +278,107 @@
 						</div>
 					</div>
 				</div>
+
+
+				<!-- простой блок для дозагрузки -->
+				<!-- внутри может быть от 1 до 4 элементов -->
+				<!-- свыше 4 - добавлять новый блок -->
+				<div class="block-projects-simple">
+					<div class="grid-project-simple">
+						<div class="project _shadow">
+							<div class="project__info">
+								<div class="project__info-left">
+									<div class="project__title">Офис для смелых и неординарных</div>
+									<div class="project__name">СПОРА-ГТ</div>
+								</div>
+								<div class="project__info-right">
+									<a href="project.html" class="btn btn-round btn_yellow btn_big">
+										<svg class="icon-arrow">
+											<use xlink:href="#icon-arrow-long"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+							<picture>
+								<source srcset="img/dev/projects/project-1.webp" type="image/webp">
+								<img src="img/dev/projects/project-1.jpg" width="489" height="580" alt="" loading="lazy">
+							</picture>
+						</div>
+					</div>
+					<div class="grid-project-simple">
+						<div class="project _shadow">
+							<div class="project__info">
+								<div class="project__info-left">
+									<div class="project__title">Офис для смелых и неординарных</div>
+									<div class="project__name">СПОРА-ГТ</div>
+								</div>
+								<div class="project__info-right">
+									<a href="project.html" class="btn btn-round btn_yellow btn_big">
+										<svg class="icon-arrow">
+											<use xlink:href="#icon-arrow-long"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+							<picture>
+								<source srcset="img/dev/projects/project-2.webp" type="image/webp">
+								<img src="img/dev/projects/project-2.jpg" width="999" height="580" alt="" loading="lazy">
+							</picture>
+						</div>
+					</div>
+					<div class="grid-project-simple">
+						<div class="project _shadow">
+							<div class="project__info">
+								<div class="project__info-left">
+									<div class="project__title">Офис для смелых и неординарных</div>
+									<div class="project__name">СПОРА-ГТ</div>
+								</div>
+								<div class="project__info-right">
+									<a href="project.html" class="btn btn-round btn_yellow btn_big">
+										<svg class="icon-arrow">
+											<use xlink:href="#icon-arrow-long"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+							<picture>
+								<source srcset="img/dev/projects/project-3.webp" type="image/webp">
+								<img src="img/dev/projects/project-3.jpg" width="489" height="580" alt="" loading="lazy">
+							</picture>
+						</div>
+					</div>
+					<div class="grid-project-simple">
+						<div class="project _shadow">
+							<div class="project__info">
+								<div class="project__info-left">
+									<div class="project__title">Офис для смелых и неординарных</div>
+									<div class="project__name">СПОРА-ГТ</div>
+								</div>
+								<div class="project__info-right">
+									<a href="project.html" class="btn btn-round btn_yellow btn_big">
+										<svg class="icon-arrow">
+											<use xlink:href="#icon-arrow-long"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+							<picture>
+								<source srcset="img/dev/projects/project-4.webp" type="image/webp">
+								<img src="img/dev/projects/project-4.jpg" width="489" height="580" alt="" loading="lazy">
+							</picture>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="pagination">
+				<div class="pagination__more">
+					<button class="btn btn_yellow btn_big js-load-more" data-url="https://deviart.ru/zamm-pro/fetch-more-blocks.php" data-target="projects-list">
+						<span>Показать ещё</span>
+					</button>
+				</div>
 			</div>
 		</div>
 		<div class="content ">
@@ -282,9 +386,9 @@
 				<div class="call-to-action__body">
 					<div class="call-to-action__text">
 						<div class="h2">Обсудим проект?</div>
-						<button type="button" data-url="" class="btn btn_yellow btn_big btn_arrow-forward js-modal-show">
+						<a href="#request" class="btn btn_yellow btn_big btn_arrow-forward">
 							<span>Связаться с нами</span>
-						</button>
+						</a>
 					</div>
 					<div class="call-to-action__image">
 						<picture>
@@ -316,7 +420,7 @@
 							<li class="nav__item"><a href="#projects">Проекты</a></li>
 							<li class="nav__item"><a href="#docs">Документация</a></li>
 							<li class="nav__item"><a href="#request">Оставить заявку</a></li>
-							<li class="nav__item"><a href="javascript:void(0)" class="text-yellow">Каталог PDF</a>
+							<li class="nav__item"><a href="javascript:void(0)" class="text-yellow">Каталог PDF</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -347,9 +451,9 @@
 							<use xlink:href="#icon-wsapp"></use>
 						</svg>
 					</a>
-					<button type="button" data-url="" class="btn btn_yellow btn_big btn_arrow-forward js-modal-show">
+					<a href="#request" class="btn btn_yellow btn_big btn_arrow-forward">
 						<span>Связаться с нами</span>
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -374,8 +478,8 @@
 	</svg>
 
 
-	<script src="js/carousel-init.js?v=20240425165544"></script>
-	<script src="js/common.js?v=20240425165544"></script>
+	<script src="js/carousel-init.js?v=20240426151818"></script>
+	<script src="js/common.js?v=20240426151818"></script>
 
 </body>
 

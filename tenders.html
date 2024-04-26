@@ -7,15 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 	<!-- common header -->
-	<link rel="stylesheet" href="css/root-vars.css?v=20240425165544">
-	<link rel="stylesheet" href="css/fonts.css?v=20240425165544">
-	<link rel="stylesheet" href="css/header.css?v=20240425165544">
-	<link rel="stylesheet" href="css/carousel-vendor.css?v=20240425165544">
+	<link rel="stylesheet" href="css/root-vars.css?v=20240426151818">
+	<link rel="stylesheet" href="css/fonts.css?v=20240426151818">
+	<link rel="stylesheet" href="css/header.css?v=20240426151818">
+	<link rel="stylesheet" href="css/carousel-vendor.css?v=20240426151818">
 
-	<link rel="stylesheet" href="css/tenders.css?v=20240425165544">
+	<link rel="stylesheet" href="css/tenders.css?v=20240426151818">
 
 	<!-- common footer -->
-	<link rel="stylesheet" href="css/footer.css?v=20240425165544">
+	<link rel="stylesheet" href="css/footer.css?v=20240426151818">
 
 	<title>Тендеры</title>
 	<meta name="description" content="Тендеры">
@@ -54,7 +54,8 @@
 								<li class="nav__item"><a href="#docs">Документация</a></li>
 								<li class="nav__item"><a href="#request">Оставить заявку</a></li>
 								<li class="nav__item">
-									<button type="button" data-url="" class="btn btn_yellow-transparent btn_small js-modal-show">Заказать звонок</button>
+									<button type="button" class="btn btn_yellow-transparent btn_small js-modal-show" data-box-width="510" data-url="https://deviart.ru/zamm-pro/fetch-modal.php?modal=callback">Заказать звонок</button>
+								</li>
 							</ul>
 						</nav>
 					</div>
@@ -85,9 +86,9 @@
 						</div>
 					</div>
 					<div class="about__body-button">
-						<button type="button" data-url="" class="btn btn_yellow btn_big btn_arrow-forward js-modal-show">
+						<a href="#request" class="btn btn_yellow btn_big btn_arrow-forward">
 							<span>Связаться с нами</span>
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -243,9 +244,9 @@
 				<div class="call-to-action__body">
 					<div class="call-to-action__text">
 						<div class="h2">Обсудим проект?</div>
-						<button type="button" data-url="" class="btn btn_yellow btn_big btn_arrow-forward js-modal-show">
+						<a href="#request" class="btn btn_yellow btn_big btn_arrow-forward">
 							<span>Связаться с нами</span>
-						</button>
+						</a>
 					</div>
 					<div class="call-to-action__image">
 						<picture>
@@ -375,6 +376,77 @@
 				</div>
 			</div>
 		</div>
+		<div class="content bg-white" id="request">
+			<div class="request">
+				<div class="request__header">
+					<div class="h2">Оставить заявку</div>
+					<div class="request__note">Наш менеджер свяжется с вами в течение <b class="text-yellow">30 минут</b></div>
+				</div>
+
+				<div class="request__body">
+					<form action="" class="form" data-fetch="true" data-url="https://deviart.ru/zamm-pro/fetch-submit-form.php" novalidate="">
+						<div class="form__fieldset">
+							<div class="form-item">
+								<label>
+									<span>ФИО</span>
+									<input type="text" name="name" value="" class="input input_fill" data-required aria-label="Имя">
+								</label>
+							</div>
+							<div class="form-item">
+								<label>
+									<span>Почта</span>
+									<input type="email" name="email" value="" class="input input_fill" data-required aria-label="E-mail">
+								</label>
+							</div>
+							<div class="form-item">
+								<label>
+									<span>Телефон</span>
+									<input type="tel" name="phone" value="" class="input input_fill" data-required aria-label="Телефон" data-pattern-type="phone">
+								</label>
+							</div>
+							<div class="form-item">
+								<label>
+									<span>Отрасль</span>
+								</label>
+								<div class="form-item">
+									<select name="department" data-select="custom" data-watch="true">
+										<option value="type-1" selected>Госсектор</option>
+										<option value="type-2">Бизнес</option>
+										<option value="type-3">Государственные компании</option>
+										<option value="type-4">Образование</option>
+										<option value="type-5">Банковский сектор</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-agreement">
+								<label>
+									<div class="switch">
+										<input type="checkbox" name="policy" value="Y" data-required>
+										<span class="slider round"></span>
+									</div>
+									<span>Я даю свое согласие на обработку моих персональных данных на условиях и для целей, определенных <a href="javascript:void(0)" target="_blank">Политикой&nbsp;конфиденциальности</a>
+								</label>
+
+								<label>
+									<div class="switch">
+										<input type="checkbox" name="oferta" value="Y" data-required>
+										<span class="slider round"></span>
+									</div>
+									<span>Я ознакомлен и принимаю условия <a href="javascript:void(0)" target="_blank" class="link-classic">Публичной&nbsp;оферты</a>
+								</label>
+							</div>
+
+						</div>
+
+						<div class="form__fieldset">
+							<button type="submit" class="btn btn_yellow btn_big btn_arrow-forward center"><span>Отправить</span></button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
 		<div class="content" id="docs">
 			<div class="docs">
 				<div class="docs__header">Документация</div>
@@ -429,7 +501,7 @@
 							<li class="nav__item"><a href="#projects">Проекты</a></li>
 							<li class="nav__item"><a href="#docs">Документация</a></li>
 							<li class="nav__item"><a href="#request">Оставить заявку</a></li>
-							<li class="nav__item"><a href="javascript:void(0)" class="text-yellow">Каталог PDF</a>
+							<li class="nav__item"><a href="javascript:void(0)" class="text-yellow">Каталог PDF</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -460,9 +532,9 @@
 							<use xlink:href="#icon-wsapp"></use>
 						</svg>
 					</a>
-					<button type="button" data-url="" class="btn btn_yellow btn_big btn_arrow-forward js-modal-show">
+					<a href="#request" class="btn btn_yellow btn_big btn_arrow-forward">
 						<span>Связаться с нами</span>
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -486,9 +558,9 @@
 		</symbol>
 	</svg>
 
-	<script src="js/carousel-init.js?v=20240425165544"></script>
-	<script src="js/tabs.js?v=20240425165544"></script>
-	<script src="js/common.js?v=20240425165544"></script>
+	<script src="js/carousel-init.js?v=20240426151818"></script>
+	<script src="js/tabs.js?v=20240426151818"></script>
+	<script src="js/common.js?v=20240426151818"></script>
 
 </body>
 
