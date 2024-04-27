@@ -143,11 +143,6 @@ if (!window.isTouchDevice) {
 	};
 }
 
-
-
-
-
-// ?
 if (!window.updateChunks) {
 	window.updateChunks = (obj, where = document) => {
 		if (typeof obj === "object" && obj !== null) {
@@ -242,7 +237,6 @@ if (!window.btnLoader) {
 	};
 }
 
-// ?
 if (!window.addToSvgSprite) {
 	window.addToSvgSprite = (svg) => {
 		let sprite = document.querySelector(".svg-sprite");
