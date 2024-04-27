@@ -1469,7 +1469,7 @@ input:checked + .slider:before {
   line-height: normal!important;
   font-size: inherit!important
 }
-.lc-select-dd-scroll {
+body:not(.noscroll) .lc-select-dd-scroll {
   max-height: none!important
 }
 #lc-select-dd,

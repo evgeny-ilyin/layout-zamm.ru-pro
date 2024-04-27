@@ -34,7 +34,7 @@ if (!window.overlay) {
 			containers = document.querySelectorAll(".container"),
 			isActiveClass = "is-active";
 		if (action) {
-			overlay(0);
+			// overlay(0); // отключено для корректной работы модалки из мобильного меню
 			const o = document.createElement("div"),
 				scrollY = window.scrollY;
 			o.classList.add("overlay");
@@ -359,6 +359,20 @@ if (!window.selectsInit) {
 			pre_placeh_opt: true,
 			enable_search: false,
 		});
+
+		// if select appears in modal we need correct dropdown's top position
+		// because in this case body has combo of noscroll class and offset from top
+		let offset = window.scrollY;
+		document.querySelectorAll(".lcslt-wrap").forEach(function (el) {
+			el.addEventListener("click", () => {
+				let select = document.getElementById("lc-select-dd");
+				if (select) {
+					if (document.body.classList.contains("noscroll")) {
+						select.style.top = `calc(${select.style.top} + ${offset}px)`;
+					}
+				}
+			});
+		});
 	};
 }
 
@@ -412,7 +426,6 @@ function hamburgerMenu() {
 	});
 
 	document.addEventListener("click", (e) => {
-		console.log(e.target);
 		// if (!navMenu.contains(e.target) && menuToggler.checked) {
 		if (menuToggler.checked) {
 			if (e.target.classList.contains("hamburger-inner")) {
@@ -542,7 +555,8 @@ function modalHandler() {
 		const modalClass = "modal",
 			modalExist = document.querySelector(`.${modalClass}`),
 			modalShow = e.target.closest(".js-modal-show"),
-			modalClose = e.target.closest([".js-modal-close", ".overlay"]);
+			modalClose = e.target.closest([".js-modal-close", ".overlay"]),
+			excludeClose = e.target.closest([".lcslt-shown"]);
 
 		if (modalShow) {
 			e.preventDefault();
@@ -606,7 +620,8 @@ function modalHandler() {
 			fetchByUrl(url, modalShow);
 		}
 
-		if (modalExist && (!modalExist.contains(e.target) || modalClose)) {
+
+		if (modalExist && (!modalExist.contains(e.target) || modalClose) && !excludeClose) {
 			modalExist.remove();
 			overlay(0);
 		}
@@ -754,16 +769,22 @@ form_submit_globalForm = {
 		if (forms.length > 0) {
 			for (let form of forms) {
 				const inputs = form.querySelectorAll("[data-required]");
-				form.setAttribute("novalidate", "");
-				form.addEventListener("submit", submitForm.bind(form, inputs));
 
-				inputs.forEach((input) => {
-					if (input.type === "email" || input.type === "tel") {
-						input.addEventListener("focusout", inputFocus);
-					} else {
-						input.addEventListener("input", inputChange);
-					}
-				});
+				if (!form.hasAttribute("is-validated")) {
+					// при добавлении модальных форм дублируются слушатели и отправка формы происходит несколько раз
+					form.setAttribute("is-validated", ""); // не навешивать лишних слушателей на форму
+					form.setAttribute("novalidate", "");
+					// form.removeEventListener("submit", submitForm, true);
+					form.addEventListener("submit", submitForm.bind(form, inputs));
+
+					inputs.forEach((input) => {
+						if (input.type === "email" || input.type === "tel") {
+							input.addEventListener("focusout", inputFocus);
+						} else {
+							input.addEventListener("input", inputChange);
+						}
+					});
+				}
 			}
 		}
 	},
@@ -1026,23 +1047,29 @@ function showSubmitStatus(response, btn) {
 	if (!response.message) return;
 	status.innerHTML = response.message;
 
-	let statusExists = document.querySelector(`.${submitStatusClass}`);
-	statusExists ? statusExists.remove() : "";
-
 	if (response.hideField === true) {
 		const modal = document.querySelector(".modal"),
+			form = btn.closest("form"),
 			modalHeaderClass = "modal__head",
 			modalBodyClass = "modal__body";
 
-		modal.querySelectorAll(`.${modalHeaderClass}, .${modalBodyClass}`).forEach((e) => e.remove());
-
 		status.classList.add(submitStatusClass, submitConditionClass, submitReplacedClass);
-		modal.append(status);
-	} else {
 
-		if (response.clearForm === true) {
-			// очистить форму
+		if (modal) {
+			modal.querySelectorAll(`.${modalHeaderClass}, .${modalBodyClass}`).forEach((e) => e.remove());
+			modal.append(status);
+			return;
 		}
+
+		if (form) {
+			let parent = form.parentElement;
+			form.remove();
+			parent.append(status);
+			return;
+		}
+	} else {
+		let statusExists = document.querySelector(`.${submitStatusClass}`);
+		statusExists ? statusExists.remove() : "";
 
 		status.classList.add(submitStatusClass, submitConditionClass);
 		btn.parentElement.prepend(status);
